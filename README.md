@@ -1,6 +1,6 @@
 # stgallpriscian
 St Gall Priscian Glosses v2.0
-Bernhard Bauer, Rijcklof Hofman, Pádraic Moran
+Bernhard Bauer, Rijcklof Hofman, Pádraic Moran\
 http://www.stgallpriscian.ie/
 
 About the digital resource
