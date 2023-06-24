@@ -8,46 +8,63 @@ function templateHeader() {
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <title>St Gall Priscian Glosses</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+<!-- Custom CSS -->
 <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif:400,400i|GFS+Neohellenic" rel="stylesheet">
 <link rel="stylesheet" media="screen" href="includes/priscian.css" />
-<link rel="stylesheet" media="print" href="includes/priscian_print.css" />
-<script src="includes/jquery-3.2.1.min.js"></script>
-<script src="includes/jquery.auto-complete.min.js"></script>
-<script src="includes/scripts.js"></script>
-<script src="includes/sorttable.js"></script>
+<xlink rel="stylesheet" media="print" href="includes/priscian_print.css" />
+
 </head>
 
 <body>
 
-<div id="wrapper">
-   <div id="header" class="full">
+<nav class="navbar navbar-expand-lg py-4 mb-5">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">St Gall Priscian Glosses</a>
+    <span class="small">v2.0</span>
+    <div>Bernhard Bauer, Rijcklof Hofman, Pádraic Moran</div>
 
-      <div id="headerText">
-         <h1><a href="/">St Gall Priscian Glosses</a> <span class="note">v2.0</span></h1>
-         <div class="byline">Bernhard Bauer, Rijcklof Hofman, Pádraic Moran</div>
-      </div>
-
-      <ul class="nav">
-      <li><a href="/">Home</a></li>
-      <li><a href="/forms">Old Irish forms</a></li>
-      <li><a href="/glosses">About the glosses</a></li>
-      <li><a href="/resource">About the digital resource</a><li>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/forms">Old Irish forms</a></li>
+        <li class="nav-item"><a class="nav-link" href="/glosses">About the glosses</a></li>
+        <li class="nav-item"><a class="nav-link" href="/resource">About the digital resource</a></li>
       </ul>
+    </div>
+  </div>
+</nav>
 
-   </div>
+<div class="container">
 
 <?php
 }
 function templateFooter() {
    ?>
+   
+</div>
 
-	<div id="footer">
-	Bernhard Bauer, Rijcklof Hofman, Pádraic Moran, <i>St Gall Priscian Glosses</i>, version 2.0 (2017) &lt;<?php print $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>&gt; [accessed <?php print date("j F Y") ?>]
-	</div>
+<div class="container-fluid bg-secondary mt-5 p-5 text-light">
+
+Bernhard Bauer, Rijcklof Hofman, Pádraic Moran, <i>St Gall Priscian Glosses</i>, version 2.0 (2017) &lt;<?php print $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>&gt; [accessed <?php print date("j F Y") ?>]
 
 </div>
 
+ 
+<!-- scripts --> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="includes/jquery-3.2.1.min.js"></script>
+<script src="includes/jquery.auto-complete.min.js"></script>
+<script src="includes/scripts.js"></script>
+<script src="includes/sorttable.js"></script>
 
 
 <!-- Start of StatCounter Code -->
@@ -59,6 +76,7 @@ var sc_click_stat=1;
 var sc_security="e6af1850"; 
 </script>
 
+<!--
 <script type="text/javascript"
 src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div
 class="statcounter"><a title="website statistics"
