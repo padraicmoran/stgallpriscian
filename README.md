@@ -1,18 +1,14 @@
-# St Gall Priscian glosses
+# St Gall Priscian glosses: version 2.1 (2023)
+
+A digital edition by Rijcklof Hofman, Pádraic Moran, Bernhard Bauer\
 http://www.stgallpriscian.ie/
 
-A resource by: Rijcklof Hofman, Pádraic Moran, Bernhard Bauer 
+For background on the digital edition and version history, see:\
+http://www.stgallpriscian.ie/resource
 
-This digital edition combines several resources in order to facilitate more efficient study of this collection of glosses:
+This code repository acts as a back-up and makes the source code transparent to all.
 
-- The transcription for all of the glosses was supplied by Rijcklof Hofman, who had already published the first half of the corpus (with an introduction, translations and commentary) in _The Sankt Gall Priscian Commentary. Part 1_ (2 vols, Münster, 1996). 
-- Bernhard Bauer supplied translations and morphological analysis for the Old Irish glosses, based on his 
-   Database of the Old Irish Priscian (http://www.univie.ac.at/indogermanistik/priscian/) (funded by the Austrian FWF).
-- The text of Priscian was made available thanks to the Corpus Grammaticorum Latinorum ()https://htldb.huma-num.fr/exist/apps/cgl/)
- project (and Alessandro Garcea in particular). 
-- The resource also provides images of the printed edition (with critical apparatus and apparatus of sources) by 
-   Martin Hertz in Heinrich Keil (ed.), _Grammatici Latini_ (6 vols, Leipzig, 1855–80), vols 2–3.</li>
-- The edition links to manuscript images at e-Codices—Virtual
-   Manuscript Library of Switzerland (http://www.e-codices.unifr.ch/en).
-- It also provides images of the edition of Old Irish glosses (with translations and occasional notes) by Whitley 
-   Stokes and John Strachan in _Thesaurus Palaeohibernicus_ (2 vols, London, 1901–1910), vol. 2, pp. 49–224 (http://www.archive.org/details/thesauruspalaeoh02stokuoft).
+Database content can be found in the file db_priscian_v2.sql. For security, the file includes/connection.php (containing the MySQL database user name and password) has been excluded from the repository. If creating a new version of this website, rename includes/connection_EXAMPLE.php as includes/connection.php and supply the appropriate database authentication details.
+
+Please report any bugs or comments to: padraic.moran@universityofgalway.ie
+
