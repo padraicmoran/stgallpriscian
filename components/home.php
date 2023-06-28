@@ -1,6 +1,6 @@
 
 <div class="row">
-   <div class="col-6">
+   <div class="col-lg-6">
 
 <h2>The St Gall Priscian glosses</h2>
 
@@ -44,7 +44,7 @@ foreach ($priscianBooks As $key => $val) {
 <p>(The manuscript breaks off in book 17. Book 18 is missing.)</p>
 
    </div>
-   <div class="col-6">
+   <div class="col-lg-6">
 
 <a href="http://www.e-codices.unifr.ch/en/csg/0904/25/medium"><img src="images/home_025.jpg" alt="St Gall, MS 904" class="img-fluid" /></a>
 

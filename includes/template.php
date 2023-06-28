@@ -108,7 +108,7 @@ function templateSearchForm() {
 ?>
 
 <div class="row bg-light px-4 py-4 border-bottom mb-5 ">
-  <div class="col-lg-5 px-4 border-end">
+  <div class="col-lg-5 px-4 pb-5 border-end">
 
 <!-- browse options -->
 <h2 class="h3 border-bottom">Browse Priscian</h2>
@@ -190,6 +190,7 @@ page
 Search in:
 <input class="form-check-input" type="radio" id="si_gl" name="si" value="gl"<?php if ($searchIn == 'gl') print ' checked="checked"'; ?> />
 <label class="form-label" class="option" for="si_gl">glosses/lemmata</label>
+
 <input class="form-check-input" type="radio" id="si_pr" name="si" value="pr"<?php if ($searchIn == 'pr') print ' checked="checked"'; ?> />
 <label class="form-label" class="option" for="si_pr">Priscian</label>
     </div>
