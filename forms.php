@@ -139,7 +139,7 @@ elseif ($aWordForm <> '' or $aHeadword <> '' or $aWordClass <> '' or $aSubclass 
       else print '<p>' . mysqli_num_rows($results) . ' matching Old Irish forms found. ';
       print ' (Click on a column heading to sort by that column.) </p>';
 
-      print '<table id="myTable" class="table table-striped sortable">';
+      print '<table id="myTable" class="table table-striped mt-5 sortable">';
       print '<tr>';
       print '<th onclick="sortTable(0);">MS</th>';
       print '<th>Gloss</th>';

@@ -64,7 +64,7 @@ target="_blank">Corpus Grammaticorum Latinorum</a> project (and Alessandro Garce
 <tr>
 <td>2.1</td>
 <td>2023</td>
-<td>Released in July 2023. The front-end was adapted to <a href="https://getbootstrap.com/">Bootstrap</a> 5.2 for better 
+<td>Released 28 June 2023. The front-end was adapted to <a href="https://getbootstrap.com/">Bootstrap</a> 5.2 for better 
    cross-platform compatibility. </td>
 </tr>
 </table>
