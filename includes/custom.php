@@ -141,25 +141,6 @@ function volConvert($vol) {
    else return $vol;
 }
 
-function formatMsRef($txt) {
-   global $testing;
-   $pgName = '';
-   if (preg_match('/([0-9]{1,3})([ab, ])*/', $txt, $matches)) {
-      $pgName = $matches[1];
-      if ($testing) return '<a class="tooltip" title="Manuscript page, column, line.<br/>Click to view image [local]." href="http://localhost/sg904images/' . str_pad($matches[1], 3, "0", STR_PAD_LEFT) . '.jpg" target="_blank">' . $txt . '</a>';
-      else return '<a class="tooltip" title="Manuscript page, column, line.<br/>Click to view image." href="http://www.e-codices.unifr.ch/en/csg/0904/' . $matches[1] . '/large" target="_blank">' . $txt . '</a>';
-   }
-   else return $txt;
-}
-
-function formatThesRef($thesRef, $thesPage) {
-   if ($thesRef <> '') {
-      return '<a class="tooltip" title="Reference in <i>Thesaurus Palaeohibernicus</i>, vol. 2.<br/>Click to open a scanned image." href="images/thesaurus/Thes_vol2_' . str_pad($thesPage, 3, "0", STR_PAD_LEFT) . '.jpg" target="_blank">' . preg_replace('/(^|a|b|\s)0{0,2}/', '$1', $thesRef) . '</td>';
-   }
-   else return '';
-}
-
-
 function formatBookRef($n) {
    global $priscianBooks;
    if ($n == 0) {
@@ -168,36 +149,37 @@ function formatBookRef($n) {
    }
    else {
       $txt = 'book ' . $n;
-      $title = 'Priscian, book ' . $n . ': ' . $priscianBooks[$n][0] . '.<br/>Click to show all glosses from this book.';
+      $title = 'Priscian, book ' . $n . ': ' . $priscianBooks[$n][0] . '. Click to show all glosses from this book.';
    }
-   return '<a href="index.php?b=' . $n . '" class="tooltip" title="' . $title . '">' . $txt . '</a>';
+   return '<a href="index.php?b=' . $n . '" data-bs-toggle="tooltip" title="' . $title . '">' . $txt . '</a>';
 } 
-function formatKeilRef($kV, $kP, $kL) {
-   if ($kP == '') return '';
-   else return '<a class="tooltip" title="Vol., page and line of Hertz\'s edition in Keil, <i>Grammatici Latini</i>. <br/>Click to open scanned image (with variant apparatus)." href="/images/keil/Keil_v' . $kV . '_' . str_pad($kP, 3, "0", STR_PAD_LEFT) . '.gif" target="_blank">' . volConvert($kV) . ' ' . $kP . ',' . $kL . '</a>';
+
+function formatMsRef($txt) {
+   $pgName = '';
+   if (preg_match('/([0-9]{1,3})([ab, ])*/', $txt, $matches)) {
+      $pgName = $matches[1];
+      return '<a data-bs-toggle="tooltip" title="Manuscript page, column, line. Click to view image." href="http://www.e-codices.unifr.ch/en/csg/0904/' . $matches[1] . '/large" target="_blank">' . $txt . '</a>';
+   }
+   else return $txt;
 }
-function formatTypes($strTypes) {
-   global $glossTypes, $glossTypesSummary;
-   $tmp = '';
-   $splitTypes = explode("+", $strTypes);
-   foreach ($splitTypes as $thisType) {
-      if ($thisType != '') {
-         if (isset($glossTypes[$thisType])) $tmp .= '<a href="index.php?t=' . $thisType . '" class="tooltip" title="Gloss type ' . $thisType . ' (' . $glossTypesSummary[substr($thisType, 0, 1)] . '): ' . $glossTypes[$thisType] . '. <br/>Click to list all glosses of this type.">' . $thisType . '</a> ';
-         else $tmp .= '' . $thisType . '[?] ';
-      }
-   } 
-   return $tmp;
+
+function formatThesRef($thesRef, $thesPage) {
+   if ($thesRef <> '' && ! is_null($thesRef) && ! is_null($thesPage)) {
+      return '<a data-bs-toggle="tooltip" title="Reference in Thesaurus Palaeohibernicus, vol. 2. Click to view scan." href="images/thesaurus/Thes_vol2_' . str_pad($thesPage, 3, "0", STR_PAD_LEFT) . '.jpg" target="_blank">' . preg_replace('/(^|a|b|\s)0{0,2}/', '$1', $thesRef) . '</td>';
+   }
+   else return '';
 }
+
 function formatGloss($txt, $highlight, $kV, $kP, $id, $trans, $hasA) {
 	$highlight = preg_quote($highlight, '/');
 
    if ($highlight != '') $txt = preg_replace('/' . $highlight . '/', '<span class="highlight">$0</span>', $txt);
-   $txt = preg_replace('/ &gt; (\([0-9a-z,=\s\'"^\ap\.)]*\))/', ' &gt; <span class="construeRef">$1</span>', $txt);
-   $txt = preg_replace('/\(ibid\.\)/', '<span class="construeRef">$0</span>', $txt);
-   $txt = str_replace(' &gt; <span', ' <span class="construeConnector">→</span> <span', $txt);
-   $txt = preg_replace('/\{[^\}]*\}/', '<span class="note">$0</span>', $txt);
+   $txt = preg_replace('/ &gt; (\([0-9a-z,=\s\'"^\ap\.)]*\))/', ' &gt; <span class="text-secondary small">$1</span>', $txt);
+   $txt = preg_replace('/\(ibid\.\)/', '<span class="text-secondary small">$0</span>', $txt);
+   $txt = str_replace(' &gt; <span', ' <span class="text-secondary small">→</span> <span', $txt);
+   $txt = preg_replace('/\{[^\}]*\}/', '<span class="text-secondary small">$0</span>', $txt);
    $txt = preg_replace('/ 7 /', ' ⁊ ', $txt);
-   $txt = preg_replace('/<g>/', ' <span class="construeSymbol">', $txt);
+   $txt = preg_replace('/<g>/', ' <span class="text-secondary">', $txt);
    $txt = preg_replace('/<\/g>/', '</span>', $txt);
    $txt = preg_replace('/<ex>/', '<i>', $txt);
    $txt = preg_replace('/<\/ex>/', '</i>', $txt);
@@ -211,16 +193,34 @@ function formatGloss($txt, $highlight, $kV, $kP, $id, $trans, $hasA) {
 
    // add link to Priscian text
    if ($kP != '') {
-      $txt = preg_replace('/<term>/', '<a class="tooltip" title="Go to context in Priscian." href="index.php?kV=' . $kV . '&amp;kP=' . $kP . '&amp;id=' . $id . '#hi">', $txt);
+      $txt = preg_replace('/<term>/', '<a data-bs-toggle="tooltip" title="Go to context in Priscian." href="index.php?kV=' . $kV . '&amp;kP=' . $kP . '&amp;id=' . $id . '#hi">', $txt);
       $txt = preg_replace('/<\/term>/', '</a>', $txt);   
    }
    else {
       $txt = preg_replace('/<term>/', '', $txt);
       $txt = preg_replace('/<\/term>/', '', $txt);   
    }
-   if ($trans != '' && ! is_null($trans)) $txt .= ' <br/><span class="trans">[‘' . $trans . '’]</span>';
-   if ($hasA) $txt .= ' <span class="note">[<a class="tooltip" title="Click to see analysis of Old Irish forms in this gloss." href="index.php?id=' . $id . '&an=1">analysis</a>]</span>';
+   if ($trans != '' && ! is_null($trans)) $txt .= ' <br/><span class="small text-secondary">[‘' . $trans . '’]</span>';
+   if ($hasA) $txt .= ' <span class="small">[<a data-bs-toggle="tooltip" title="Click to see analysis of Old Irish forms in this gloss." href="index.php?id=' . $id . '&an=1">analysis</a>]</span>';
    return $txt;   
+}
+
+function formatKeilRef($kV, $kP, $kL) {
+   if ($kP == '') return '';
+   else return '<a data-bs-toggle="tooltip" title="Vol., page and line of Hertz\'s edition. Click to view scan (with variant apparatus)." href="/images/keil/Keil_v' . $kV . '_' . str_pad($kP, 3, "0", STR_PAD_LEFT) . '.gif" target="_blank">' . volConvert($kV) . ' ' . $kP . ',' . $kL . '</a>';
+}
+
+function formatTypes($strTypes) {
+   global $glossTypes, $glossTypesSummary;
+   $tmp = '';
+   $splitTypes = explode("+", $strTypes);
+   foreach ($splitTypes as $thisType) {
+      if ($thisType != '') {
+         if (isset($glossTypes[$thisType])) $tmp .= '<a href="index.php?t=' . $thisType . '" data-bs-toggle="tooltip" title="Gloss type ' . $thisType . ' (' . $glossTypesSummary[substr($thisType, 0, 1)] . '): ' . $glossTypes[$thisType] . '. Click to list all glosses of this type.">' . $thisType . '</a> ';
+         else $tmp .= '' . $thisType . '[?] ';
+      }
+   } 
+   return $tmp;
 }
 
 

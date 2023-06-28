@@ -47,22 +47,23 @@ if ($aWordForm <> '' or $aHeadword <> '' or $aWordClass <> '' or $aSubclass <> '
    if ($aMorph <> '') $sql .= "And w.analysis Like '%" . $aMorph . "%' ";
    $sql .= "Order By g.recordID ";
 
-   $results = db_query($sql);
-   if (mysql_num_rows($results) > 0) {
+   $results = mysqli_query($link, $sql);
+   if (mysqli_num_rows($results) > 0) {
+      $rows = mysqli_fetch_all($results, MYSQLI_ASSOC);
       $row = 0;
-      while ($row < mysql_num_rows($results)) {
+      while ($row < mysqli_num_rows($results)) {
          fputcsv($output, array(
-         mysql_result($results, $row, 'g.ms_ref'),
-         mysql_result($results, $row, 'g.code'), 
-         mysql_result($results, $row, 'g.thesaurus_ref'),
-         mysql_result($results, $row, 'w.word_instance'), 
-         mysql_result($results, $row, 'w.headword'), 
-         mysql_result($results, $row, 'w.wordclass'), 
-         mysql_result($results, $row, 'w.subclass'), 
-         mysql_result($results, $row, 'w.analysis'), 
-         mysql_result($results, $row, 'w.meaning'), 
-         mysql_result($results, $row, 'w.voice'), 
-         mysql_result($results, $row, 'w.rel') 
+         $rows[$row]['ms_ref'],
+         $rows[$row]['code'], 
+         $rows[$row]['thesaurus_ref'],
+         $rows[$row]['word_instance'], 
+         $rows[$row]['headword'], 
+         $rows[$row]['wordclass'], 
+         $rows[$row]['subclass'], 
+         $rows[$row]['analysis'], 
+         $rows[$row]['meaning'], 
+         $rows[$row]['voice'], 
+         $rows[$row]['rel'] 
          ));
          $row ++;
       }
