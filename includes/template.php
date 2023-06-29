@@ -261,13 +261,18 @@ foreach ($priscianBooks As $key => $val) {
 <!-- end panel -->
 </div>
 
-<div class="container mt-2 mb-5">
-<button type="button" class="btn btn-sm btn-outline-secondary visible-lg"
+<div id="searchPanelToggle" class="container mt-2 d-lg-none">
+<button type="button" class="btn btn-sm btn-outline-secondary"
   data-bs-toggle="collapse" data-bs-target="#searchPanel" aria-expanded="false" aria-controls="searchPanel">Show/hide browse and search options</button>
 </div>
 
 <script type="text/javascript">
-if ($(window).width() < 992) $('#searchPanel').removeClass('show');
+// on small screens, hide search panel by default; then make sure toggle button is available
+if ($(window).width() < 992) {
+  $('#searchPanel').removeClass('show');
+  $('#searchPanelToggle').removeClass('d-lg-none');
+}
+
 </script>
 
 <?php
