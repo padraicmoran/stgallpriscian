@@ -83,7 +83,7 @@ templateHeader();
 templateSearchForm();
 ?>
 
-<div class="container">
+<div class="container mt-5">
 <?php
    
 if ($error != '') print $error;

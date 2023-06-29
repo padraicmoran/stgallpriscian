@@ -261,7 +261,7 @@ foreach ($priscianBooks As $key => $val) {
 <!-- end panel -->
 </div>
 
-<div id="searchPanelToggle" class="container mt-2 d-lg-none">
+<div id="searchPanelToggle" class="container mt-3 d-lg-none">
 <button type="button" class="btn btn-sm btn-outline-secondary"
   data-bs-toggle="collapse" data-bs-target="#searchPanel" aria-expanded="false" aria-controls="searchPanel">Show/hide browse and search options</button>
 </div>
