@@ -107,20 +107,21 @@ function templateSearchForm() {
   global $priscianBooks, $browseBook, $keilVol, $keilPage, $msPage, $searchStr, $searchIn, $searchType, $glossTypes, $searchBook;
 ?>
 
-<div class="row bg-light px-4 py-4 border-bottom mb-5 ">
+<!-- main row, with two columns (collapsable) -->
+<div class="row bg-light px-4 py-3 border-bottom collapse show" id="searchPanel">
+
+  <!-- browse column -->
   <div class="col-lg-5 px-4 pb-5 border-end">
 
-<!-- browse options -->
 <h2 class="h3 border-bottom">Browse Priscian</h2>
-
 
 <!-- go to book -->
 <form action="index.php" method="get" id="goToBook">
-  <div class="row">
-    <div class="col-lg-4 py-1">
+    <div class="row">
+      <div class="col-lg-4 py-1">
 <label class="form-label" class="form-label" for="bb">Go to book:</label>
-    </div>
-    <div class="col-lg-8 py-1">
+      </div>
+      <div class="col-lg-8 py-1">
 
 <select class="form-select" id="bb" name="bb" onchange="document.getElementById('goToBook').submit(); ">
 <option value=""></option>
@@ -131,17 +132,17 @@ foreach ($priscianBooks As $key => $val) {
 } 
 ?>
 </select> 
+      </div>
     </div>
-  </div>
 </form>
 
 <!-- go to Keil page -->
 <form action="index.php" method="get" id="goToBook">
-  <div class="row">
-    <div class="col-lg-4 py-1">
+    <div class="row">
+      <div class="col-lg-4 py-1">
 <label class="form-label" for="kP">Or to Hertz, ed.:</label>
-    </div>
-    <div class="col-lg-8 py-1">
+      </div>
+      <div class="col-lg-8 py-1">
       
 <i>GL</i> 
 <select class="form-select d-inline-flex" style="width: 70px;" name="kV">
@@ -153,26 +154,29 @@ writeOption('III ', '3', $keilVol);
 page 
 <input class="form-control d-inline-flex" type="text" id="kP" name="kP" value="<?php print $keilPage ?>" style="width: 60px; "/>
 <input class="btn btn-secondary btn-sm" type="submit" value="go" />
+      </div>
     </div>
-  </div>
 </form>
 
 <!-- go to MS page -->
 <form action="index.php" method="get" id="goToBook">
     <div class="row">
-    <div class="col-lg-4 py-1">
+      <div class="col-lg-4 py-1">
 <label class="form-label" for="ms">Or to MS page:</label>
-    </div>
-    <div class="col-lg-8 py-1">
+      </div>
+      <div class="col-lg-8 py-1">
 <input class="form-control d-inline-flex" type="text" id="ms" name="ms" value="<?php print $msPage ?>"  style="width: 60px; "/>
 <input class="btn btn-secondary btn-sm" type="submit" value="go" />
 (e.g. 10, 10b; range 1–249)
+      </div>
     </div>
-  </div>
 </form>
 
   </div>
-  <div class="col-lg-5 px-4">
+
+
+  <!-- search column -->
+  <div class="col-lg-5 px-4 border-end">
 
 <!-- search options -->
 <h2 class="h3 border-bottom">Search glosses</h2>
@@ -180,11 +184,11 @@ page
 <form action="index.php" method="get">
 
 <!-- search for text -->
-  <div class="row">
-    <div class="col-lg-4 py-1">
+    <div class="row">
+      <div class="col-lg-4 py-1">
 <label class="form-label" for="s">Search for text:</label> 
-    </div>
-    <div class="col-lg-8 py-1">
+      </div>
+      <div class="col-lg-8 py-1">
 <input class="form-control" class="search" type="text" id="s" name="s" value="<?php print $searchStr ?>" />
 
 Search in:
@@ -193,9 +197,8 @@ Search in:
 
 <input class="form-check-input" type="radio" id="si_pr" name="si" value="pr"<?php if ($searchIn == 'pr') print ' checked="checked"'; ?> />
 <label class="form-label" class="option" for="si_pr">Priscian</label>
+      </div>
     </div>
-  </div>
-
 
 <!-- search Thes. 
 <form action="index.php" method="get">
@@ -206,11 +209,11 @@ Search in:
 -->
 
 <!-- restrict by type -->
-  <div class="row">
-    <div class="col-lg-4 py-1">
+    <div class="row">
+      <div class="col-lg-4 py-1">
 <label class="form-label" for="t">Within gloss type:</label>
-    </div>
-    <div class="col-lg-8 py-1">
+      </div>
+      <div class="col-lg-8 py-1">
 
 <select class="form-select" id="t" name="t">
 <option value="">(any)</option>
@@ -220,15 +223,15 @@ foreach ($glossTypes as $code => $description) {
 } 
 ?>
 </select>
+      </div>
     </div>
-  </div>
 
 <!-- restrict to book -->
     <div class="row">
-    <div class="col-lg-4 py-1">
+      <div class="col-lg-4 py-1">
 <label class="form-label" for="b">In book:</label>
-    </div>
-    <div class="col-lg-8 py-1">
+      </div>
+      <div class="col-lg-8 py-1">
 <select class="form-select" id="b" name="b">
 <option value="">(all)</option>
 <?php
@@ -238,23 +241,34 @@ foreach ($priscianBooks As $key => $val) {
 } 
 ?>
 </select> 
+      </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-lg-4 py-1"></div>
-    <div class="col-lg-8 py-1">
+    <div class="row">
+      <div class="col-lg-4 py-1"></div>
+      <div class="col-lg-8 py-1">
 <input class="btn btn-secondary btn-sm" type="submit" value="go" />
+      </div>
     </div>
-  </div>
 
 <!--
 <span class="note">(Or search for <a href="forms.php">Old Irish forms</a>.)</span>
 -->
 </form>
 
+    <!-- end search colum -->
   </div>
+<!-- end panel -->
 </div>
+
+<div class="container mt-2 mb-5">
+<button type="button" class="btn btn-sm btn-outline-secondary visible-lg"
+  data-bs-toggle="collapse" data-bs-target="#searchPanel" aria-expanded="false" aria-controls="searchPanel">Show/hide browse and search options</button>
+</div>
+
+<script type="text/javascript">
+if ($(window).width() < 992) $('#searchPanel').removeClass('show');
+</script>
 
 <?php
 }
