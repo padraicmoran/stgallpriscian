@@ -34,7 +34,7 @@ window.addEventListener('load', function() {
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg px-4 py-2 border-bottom border-secondary shadow sticky-top">
+<nav class="navbar navbar-expand-lg px-4 py-2 border-bottom border-secondary shadow sticky-top" style="background-color: #eee8aa; ">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">St Gall Priscian Glosses</a>
     <span class="small">v<?php print $version; ?></span>
