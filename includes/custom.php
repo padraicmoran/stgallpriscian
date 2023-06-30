@@ -12,7 +12,7 @@ else $testing = false;
 // load in type codes
 
 $priscianBooks = array(
-   'p' => array('Praefatio', 2, 1), 
+   0 => array('Praefatio', 2, 1), 
    1 => array('De uoce, de littera', 2, 5),
    2 => array('De syllaba, de dictione, de oratione, de nomine, etc.', 2, 44), 
    3 => array('De comparatione, de superlativo, de diminutivo', 2, 83), 

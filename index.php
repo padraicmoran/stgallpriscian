@@ -53,7 +53,7 @@ elseif ($msPage != '') {
 }
 
 // check to see if keil pages are within limits
-if ($keilVol == 2 && $keilPage > 597) $error = '<p><i>GL</i> 2 ends at p. <a href="index.php?kV=2&kP=597">597</a>.</p>';
+if ($keilVol == 2 && $keilPage > 597) $error = '<p><i>GL</i> II ends at p. <a href="index.php?kV=2&kP=597">597</a>.</p>';
 elseif ($msCutOff && ($keilVol == 3 && $keilPage > 147)) $error = '<p>This edition displays only the text of Priscian to <i>GL</i> III, p. <a href="index.php?kV=3&kP=147">147</a>, where the St Gall manuscript ends (at <i>naturaliter</i>, line 18).</p>';
 
 // process Thes. ref. search

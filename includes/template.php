@@ -85,16 +85,6 @@ var sc_click_stat=1;
 var sc_security="e6af1850"; 
 </script>
 
-<!--
-<script type="text/javascript"
-src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div
-class="statcounter"><a title="website statistics"
-class="statcounter" href="http://www.statcounter.com/"><img
-class="statcounter"
-src="http://c.statcounter.com/5311348/0/e6af1850/1/"
-alt="website statistics" /></a></div></noscript>
-<!-- End of StatCounter Code -->
-
 </body>
 </html>
 
@@ -192,11 +182,15 @@ page
 <input class="form-control" class="search" type="text" id="s" name="s" value="<?php print $searchStr ?>" />
 
 Search in:
+<div class="form-check-inline">
 <input class="form-check-input" type="radio" id="si_gl" name="si" value="gl"<?php if ($searchIn == 'gl') print ' checked="checked"'; ?> />
 <label class="form-label" class="option" for="si_gl">glosses/lemmata</label>
-
+</div>
+<div class="form-check-inline">
 <input class="form-check-input" type="radio" id="si_pr" name="si" value="pr"<?php if ($searchIn == 'pr') print ' checked="checked"'; ?> />
 <label class="form-label" class="option" for="si_pr">Priscian</label>
+</div>
+
       </div>
     </div>
 
