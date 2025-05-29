@@ -76,14 +76,22 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 })
 </script>
 
-<!-- Start of StatCounter Code -->
+<!-- Default Statcounter code for stgallpriscian.ie
+http://www.stgallpriscian.ie -->
 <script type="text/javascript">
 var sc_project=5311348; 
 var sc_invisible=1; 
-var sc_partition=59; 
-var sc_click_stat=1; 
 var sc_security="e6af1850"; 
 </script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/5311348/0/e6af1850/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
 
 </body>
 </html>
@@ -282,11 +290,11 @@ function writeSigla() {
 <h3 class="h4">Conspectus siglorum</h3>
 <h4 class="h5">Manuscripts</h3>
 <dl class="row">
-<dt class="col-1">G</dt><dd class="col-11"><a target="_blank" href="http://www.e-codices.unifr.ch/en/csg/0904/1/large">Sankt Gallen, Stiftsbibliothek, MS 904</a> (a. 851)</dd>
-<dt class="col-1">L</dt><dd class="col-11"><a target="_blank" href="http://hdl.handle.net/1887.1/item:1603880">Leiden, Universiteitsbibliotheek, MS BPL 67</a> (a. 838)</dd>
-<dt class="col-1">K</dt><dd class="col-11"><a target="_blank" href="https://nbn-resolving.de/urn:nbn:de:bsz:31-7326">Karlsruhe, Badische Landesbibliothek, Reichenauer Pergamenthandschriften, Augiensis CXXXII</a> (s. IX<sup>b</sup>)</dd>
-<dt class="col-1">E</dt><dd class="col-11"><a target="_blank" href="http://gallica.bnf.fr/ark:/12148/btv1b84790031/f9.image">Paris, Bibliothèque Nationale, MS Latin 10290</a> (s. IX<sup>c–d</sup>)</dd>
-<dt class="col-1">M</dt><dd class="col-11">Milano, Biblioteca Ambrosiana, Cod. A 138 sup. (s. IX)</dd>
+<dt class="col-1">G</dt><dd class="col-11"><a target="_blank" href="http://www.mira.ie/187/">St Gall, Stiftsbibliothek, 904</a> (a. 851)</dd>
+<dt class="col-1">L</dt><dd class="col-11"><a target="_blank" href="http://www.mira.ie/159/">Leiden, Universiteitsbibliotheek, BPL 67</a> (a. 838)</dd>
+<dt class="col-1">K</dt><dd class="col-11"><a target="_blank" href="http://www.mira.ie/55/">Karlsruhe, Badische Landesbibliothek, Aug. perg. CXXXII</a> (s. IX<sup>b</sup>)</dd>
+<dt class="col-1">E</dt><dd class="col-11"><a target="_blank" href="http://www.mira.ie/28/">Paris, Bibliothèque nationale, Latin 10290</a> (s. IX<sup>c–d</sup>)</dd>
+<dt class="col-1">M</dt><dd class="col-11"><a target="_blank" href="http://www.mira.ie/114/">Milan, Biblioteca Ambrosiana, Cod. A 138 sup. (s. IX)</a></dd>
 <dt class="col-1">T</dt><dd class="col-11">Dublin, Trinity College, MS 229 (C.1.8) (s. XI)</dd>
 </dl>
 

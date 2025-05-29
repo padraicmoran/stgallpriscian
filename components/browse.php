@@ -39,10 +39,7 @@ else {
       $prevPage = 597;
    }
    elseif ($keilVol == 2 && $prevPage < 1) $prevPage = 0;
-   print '<p class="small" style="margin-bottom: 20px; ">';
-   if ($prevPage > 0) print '<a class="btn btn-secondary" href="index.php?kV=' . $prevVol . '&amp;kP=' . $prevPage . '#end">previous page</a> ';
-   if ($nextPage > 0) print '<a class="btn btn-secondary" href="index.php?kV=' . $nextVol . '&amp;kP=' . $nextPage . '">next page</a>';
-   print '</p>';
+   pagingButtons();
    
    // advisory note
    print '<p>';  
@@ -92,14 +89,23 @@ else {
          
    // recap paging
    print '<p><a name="end"></a>&nbsp;</p>';
-   print '<p class="small">';
-   if ($prevPage > 0) print '<a class="btn btn-secondary" href="index.php?kV=' . $prevVol . '&amp;kP=' . $prevPage . '#end">previous page</a> ';
-   if ($nextPage > 0) print '<a class="btn btn-secondary" href="index.php?kV=' . $nextVol . '&amp;kP=' . $nextPage . '">next page</a>';
-   print '</p>';
+   pagingButtons();
 
    writeSigla();
 }
 
+
+// FUNCTIONS
+
+function pagingButtons() {
+   global $prevVol, $nextVol, $prevPage, $nextPage;
+
+   print '<p class="small" style="margin-bottom: 20px; ">';
+   if ($prevPage > 0) print '<a accesskey="p" class="btn btn-secondary" href="index.php?kV=' . $prevVol . '&amp;kP=' . $prevPage . '#end">previous page</a> ';
+   if ($nextPage > 0) print '<a accesskey="n" class="btn btn-secondary" href="index.php?kV=' . $nextVol . '&amp;kP=' . $nextPage . '">next page</a>';
+   print '</p>';
+
+}
 
 function writeGlossRow() {
    global $rowsG, $rowG, $glossID, $searchStr, $priscianBooks;

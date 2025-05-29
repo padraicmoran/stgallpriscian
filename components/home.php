@@ -34,7 +34,7 @@ About one-third of the verbal glosses are written in Old Irish, providing one of
 <?php
 foreach ($priscianBooks As $key => $val) {
    print '<li>';
-   if ($key == 0) print '<a href="/index.php?bb=p">' . $val[0] . '</a>';
+   if ($key == 0) print '<a href="/index.php?bb=0">' . $val[0] . '</a>';
    elseif ($key < 18) print '<a href="/index.php?bb=' . $key . '">Book ' . $key . ': <i>' . $val[0] . '</i></a>';
    print '</li>' . "\n";
 } 
