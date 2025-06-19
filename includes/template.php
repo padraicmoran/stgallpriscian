@@ -11,6 +11,17 @@ function templateHeader() {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<meta name="description" lang="en" content="A digital edition of Latin and Old Irish glosses on Priscian in St Gall, Stiftsbibliothek, 904."/>
+<meta name="DC.title" lang="en" content="St Gall Priscian Glosses"/>
+<meta name="DC.description" lang="en" content="A digital edition of Latin and Old Irish glosses on Priscian in St Gall, Stiftsbibliothek, 904."/>
+<meta name="DC.creator" content="Pádraic Moran" />
+<meta name="DC.publisher" content="Pádraic Moran, University of Galway" />
+<meta name="DC.type" content="Text" />
+<meta name="DC.format" content="text/html" />
+<meta name="DC.coverage" content="Global" />
+<meta name="DC.source" content="University of Galway" />
+<meta name="DC.language" content="en_IE" />
+
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
@@ -18,7 +29,13 @@ function templateHeader() {
 <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif:400,400i|GFS+Neohellenic" rel="stylesheet">
 <link rel="stylesheet" media="screen" href="includes/priscian.css" />
 
-<!-- scripts --> 
+<!-- favicons -->
+<link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" type="image/x-icon" href="/images/favicons/favicon-32x32.ico" sizes="32x32" type="image/png">
+<link rel="icon" type="image/x-icon" href="/images/favicons/favicon-16x16.ico" sizes="16x16" type="image/png">
+<link rel="icon" type="image/x-icon" href="/images/favicons/favicon.ico">
+
+  <!-- scripts --> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 <script src="includes/jquery-3.2.1.min.js"></script>
 <script src="includes/jquery.auto-complete.min.js"></script>
